@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ikhsan Fauzy | Portfolio</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#020914;
+    color:#f4f8ff;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-3;
+
+    background:
+    linear-gradient(rgba(0,220,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,220,255,.035) 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    animation:gridMove 20s linear infinite;
+}
+
+@keyframes gridMove{
+    to{
+        background-position:45px 45px;
+    }
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    background:#00d9ff;
+    filter:blur(150px);
+    opacity:.08;
+    top:-200px;
+    right:-100px;
+    z-index:-2;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:65px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    background:rgba(2,9,20,.88);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(0,217,255,.25);
+
+    z-index:1000;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#00d9ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:27px;
+}
+
+.nav-links a{
+    font-size:13px;
+    color:#aebdce;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#00d9ff;
+}
+
+.nav-buttons{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.theme-btn,
+.menu-btn{
+    width:36px;
+    height:36px;
+
+    border:1px solid rgba(0,217,255,.3);
+    border-radius:8px;
+
+    background:#071525;
+    color:#00d9ff;
+
+    cursor:pointer;
+}
+
+.contact-btn{
+    padding:9px 14px;
+    border:1px solid #00aeea;
+    border-radius:8px;
+    color:#00d9ff;
+    font-size:12px;
+    transition:.3s;
+}
+
+.contact-btn:hover{
+    background:#00d9ff;
+    color:#00101a;
+}
+
+.menu-btn{
+    display:none;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:550px;
+
+    padding:110px 8% 60px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:30px;
+
+    border-bottom:1px solid rgba(0,217,255,.18);
+}
+
+.hero-text{
+    animation:heroIn 1s ease;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateX(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.small-title{
+    color:#d8e1eb;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.small-title span{
+    color:#00d9ff;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#00d9ff;
+    text-shadow:0 0 25px rgba(0,217,255,.35);
+}
+
+.hero h3{
+    font-size:16px;
+    color:#d4deea;
+    margin-bottom:18px;
+}
+
+.hero-description{
+    max-width:480px;
+    color:#aab8c8;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:12px 20px;
+    border-radius:25px;
+    font-size:12px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:linear-gradient(90deg,#00d9ff,#168cff);
+    color:#00101a;
+    box-shadow:0 0 20px rgba(0,217,255,.2);
+}
+
+.btn-outline{
+    border:1px solid #00d9ff;
+    color:#00d9ff;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 25px rgba(0,217,255,.3);
+}
+
+.socials{
+    display:flex;
+    gap:15px;
+    margin-top:22px;
+}
+
+.socials a{
+    width:32px;
+    height:32px;
+    border:1px solid rgba(0,217,255,.3);
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    color:#9eb0c4;
+    font-size:13px;
+
+    transition:.3s;
+}
+
+.socials a:hover{
+    color:#00d9ff;
+    border-color:#00d9ff;
+    transform:translateY(-4px);
+}
+
+
+/* =====================================================
+   FOTO
+===================================================== */
+
+.hero-photo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    min-height:350px;
+}
+
+.photo-ring{
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    padding:6px;
+
+    background:linear-gradient(
+        135deg,
+        #00d9ff,
+        #168cff,
+        #003b75,
+        #00d9ff
+    );
+
+    animation:rotateRing 7s linear infinite;
+
+    box-shadow:
+        0 0 25px #00d9ff,
+        0 0 70px rgba(0,217,255,.2);
+}
+
+@keyframes rotateRing{
+    0%{
+        filter:hue-rotate(0deg);
+    }
+
+    100%{
+        filter:hue-rotate(360deg);
+    }
+}
+
+.photo{
+    width:100%;
+    height:100%;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    background:#061426;
+
+    animation:photoFloat 4s ease-in-out infinite;
+}
+
+@keyframes photoFloat{
+    50%{
+        transform:scale(1.025);
+    }
+}
+
+.photo-label{
+    position:absolute;
+
+    right:3%;
+    top:15%;
+
+    color:#00d9ff;
+    font-size:20px;
+    font-style:italic;
+
+    transform:rotate(-8deg);
+
+    text-shadow:0 0 12px #00d9ff;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+section{
+    width:88%;
+    max-width:1050px;
+    margin:auto;
+    padding:55px 0;
+
+    border-bottom:1px solid rgba(0,217,255,.15);
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:30px;
+}
+
+.title-icon{
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    background:rgba(0,217,255,.08);
+    border:1px solid rgba(0,217,255,.3);
+
+    color:#00d9ff;
+}
+
+.section-title small{
+    color:#8395aa;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    font-size:28px;
+    margin-top:4px;
+}
+
+.section-title h2 span{
+    color:#00d9ff;
+}
+
+.subtitle{
+    color:#94a6ba;
+    font-size:13px;
+    margin-top:-15px;
+    margin-bottom:25px;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-text h3{
+    font-size:19px;
+    margin-bottom:15px;
+}
+
+.about-text p{
+    color:#b4c1d0;
+    font-size:13px;
+    line-height:1.8;
+    margin-bottom:13px;
+}
+
+.about-text b{
+    color:white;
+}
+
+.school-card{
+    height:180px;
+
+    border:1px solid #00bce8;
+    border-radius:15px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,217,255,.12),
+        rgba(0,20,50,.7)
+    );
+
+    box-shadow:
+    0 0 30px rgba(0,217,255,.08);
+
+    transition:.4s;
+}
+
+.school-card:hover{
+    transform:translateY(-8px) rotate(1deg);
+}
+
+.school-icon{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.school-card h3{
+    color:#00d9ff;
+    font-size:17px;
+}
+
+.school-card p{
+    color:#91a5ba;
+    font-size:11px;
+    margin-top:5px;
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:30px;
+}
+
+.info-card{
+    padding:17px;
+
+    background:rgba(5,20,40,.7);
+
+    border:1px solid rgba(0,217,255,.2);
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.info-card:hover{
+    border-color:#00d9ff;
+    transform:translateY(-5px);
+}
+
+.info-card .icon{
+    font-size:23px;
+    color:#00d9ff;
+    margin-bottom:10px;
+}
+
+.info-card small{
+    display:block;
+    color:#7f93aa;
+    font-size:9px;
+}
+
+.info-card b{
+    display:block;
+    font-size:12px;
+    margin-top:4px;
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skills{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.skill{
+    padding:18px;
+
+    background:rgba(5,20,40,.7);
+
+    border:1px solid rgba(0,217,255,.2);
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-5px);
+    border-color:#00d9ff;
+}
+
+.skill-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:12px;
+}
+
+.skill-name{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.skill-icon{
+    width:35px;
+    height:35px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:8px;
+
+    background:rgba(0,217,255,.1);
+    color:#00d9ff;
+}
+
+.skill-name b{
+    font-size:13px;
+}
+
+.skill-name small{
+    display:block;
+    color:#7f93aa;
+    font-size:9px;
+    margin-top:3px;
+}
+
+.percent{
+    color:#00d9ff;
+    font-size:11px;
+}
+
+.progress{
+    width:100%;
+    height:7px;
+    background:#10243c;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress span{
+    display:block;
+    width:0;
+    height:100%;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #00d9ff,
+        #168cff
+    );
+
+    box-shadow:0 0 10px #00d9ff;
+
+    transition:1.5s ease;
+}
+
+
+/* =====================================================
+   HOBI
+===================================================== */
+
+.hobbies{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.hobby{
+    min-height:180px;
+
+    padding:25px;
+
+    border:1px solid rgba(0,217,255,.25);
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,217,255,.08),
+        rgba(3,15,32,.8)
+    );
+
+    transition:.4s;
+}
+
+.hobby:hover{
+    transform:translateY(-7px);
+    border-color:#00d9ff;
+    box-shadow:0 0 30px rgba(0,217,255,.1);
+}
+
+.hobby-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.hobby h3{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.hobby p{
+    color:#9eafc1;
+    font-size:12px;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contacts{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.contact{
+    padding:17px;
+
+    min-height:120px;
+
+    background:rgba(5,20,40,.7);
+
+    border:1px solid rgba(0,217,255,.2);
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.contact:hover{
+    transform:translateY(-6px);
+    border-color:#00d9ff;
+    box-shadow:0 0 25px rgba(0,217,255,.1);
+}
+
+.contact-icon{
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.whatsapp{
+    color:#25d366;
+}
+
+.tiktok{
+    color:#fff;
+}
+
+.instagram{
+    color:#e1306c;
+}
+
+.gmail{
+    color:#ff5549;
+}
+
+.contact small{
+    display:block;
+    color:#7f93aa;
+    font-size:9px;
+}
+
+.contact b{
+    display:block;
+    color:white;
+    font-size:11px;
+    margin-top:5px;
+    word-break:break-word;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    text-align:center;
+    padding:35px 20px;
+
+    color:#71859b;
+
+    font-size:11px;
+}
+
+footer strong{
+    color:#00d9ff;
+    font-size:16px;
+}
+
+footer span{
+    color:#00d9ff;
+}
+
+
+/* =====================================================
+   SCROLL ANIMATION
+===================================================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:.8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+#topBtn{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    border:1px solid #00d9ff;
+
+    background:#031326;
+
+    color:#00d9ff;
+
+    cursor:pointer;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:999;
+}
+
+#topBtn.show{
+    opacity:1;
+    visibility:visible;
+}
+
+
+/* =====================================================
+   LIGHT MODE
+===================================================== */
+
+body.light{
+    background:#eef6fb;
+    color:#071522;
+}
+
+body.light .navbar{
+    background:rgba(240,248,252,.9);
+}
+
+body.light .nav-links a{
+    color:#425467;
+}
+
+body.light .hero-description,
+body.light .about-text p,
+body.light .hobby p{
+    color:#526477;
+}
+
+body.light .skill,
+body.light .info-card,
+body.light .contact,
+body.light .hobby{
+    background:#fff;
+}
+
+body.light .skill-name b,
+body.light .info-card b,
+body.light .contact b,
+body.light .hobby h3{
+    color:#071522;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:800px){
+
+    .navbar{
+        padding:0 20px;
+    }
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+        right:15px;
+
+        width:200px;
+
+        flex-direction:column;
+
+        gap:0;
+
+        background:#061426;
+
+        border:1px solid rgba(0,217,255,.3);
+
+        border-radius:12px;
+
+        padding:8px;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:13px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .contact-btn{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding-top:105px;
+    }
+
+    .hero-description{
+        margin:auto;
+    }
+
+    .hero-buttons,
+    .socials{
+        justify-content:center;
+    }
+
+    .hero-photo{
+        order:-1;
+        min-height:300px;
+    }
+
+    .photo-ring{
+        width:250px;
+        height:250px;
+    }
+
+    .photo-label{
+        right:4%;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .skills{
+        grid-template-columns:1fr;
+    }
+
+    .hobbies{
+        grid-template-columns:1fr;
+    }
+
+    .contacts{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .section-title h2{
+        font-size:23px;
+    }
+
+    .info-grid,
+    .contacts{
+        grid-template-columns:1fr;
+    }
+
+    .photo-ring{
+        width:230px;
+        height:230px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="#home" class="logo">
+        <span>&lt;/&gt;</span> Ikhsan Fauzy
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="#home" class="active">Home</a>
+
+        <a href="#tentang">Tentang</a>
+
+        <a href="#keahlian">Keahlian</a>
+
+        <a href="#hobi">Hobi</a>
+
+        <a href="#kontak">Kontak</a>
+
+    </nav>
+
+
+    <div class="nav-buttons">
+
+        <button class="theme-btn" id="themeBtn">
+            ☾
+        </button>
+
+        <a href="#kontak" class="contact-btn">
+            Kontak Saya
+        </a>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+
+    <div class="hero-text">
+
+        <div class="small-title">
+            — &nbsp; HALO, SAYA 👋
+        </div>
+
+        <h1>
+            Ikhsan <span>Fauzy</span>
+        </h1>
+
+        <h3>
+            Pelajar &nbsp;|&nbsp;
+            SMKN 4 Dumai &nbsp;|&nbsp;
+            X (10) TKJ
+        </h3>
+
+        <p class="hero-description">
+
+            Selamat datang di website portfolio saya.
+            Saya adalah seorang pelajar yang tertarik
+            dengan teknologi, komputer, jaringan,
+            dan dunia digital.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#tentang" class="btn btn-primary">
+                Jelajahi Portfolio →
+            </a>
+
+            <a
+                href="https://wa.me/6282168848036"
+                target="_blank"
+                class="btn btn-outline">
+
+                ☎ Hubungi Saya
+
+            </a>
+
+        </div>
+
+
+        <div class="socials">
+
+            <a
+                href="https://wa.me/6282168848036"
+                target="_blank">
+
+                WA
+
+            </a>
+
+            <a
+                href="https://www.tiktok.com/@san_aja2009"
+                target="_blank">
+
+                TT
+
+            </a>
+
+            <a
+                href="https://www.instagram.com/ikhsan_Ajaa"
+                target="_blank">
+
+                IG
+
+            </a>
+
+            <a href="mailto:fauzyikhsan05@gmail.com">
+
+                @
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="hero-photo">
+
+        <!--
+        ===================================================
+        GANTI FOTO
+
+        Masukkan foto kamu dengan nama:
+
+        foto.jpg
+
+        ke folder yang sama dengan index.html.
+        ===================================================
+        -->
+
+        <div class="photo-ring">
+
+            <img
+                src="/portofolioo2/san.jpg"
+                alt="Foto Ikhsan Fauzy"
+                class="photo"
+            >
+
+        </div>
+
+        <div class="photo-label">
+
+            Keep<br>
+            Learning<br>
+            Keep<br>
+            Growing
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TENTANG
+===================================================== -->
+
+<section id="tentang">
+
+    <div class="section-title reveal">
+
+        <div class="title-icon">
+            👤
+        </div>
+
+        <div>
+
+            <small>PROFIL</small>
+
+            <h2>
+                Tentang <span>Saya</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="about">
+
+
+        <div class="about-text reveal">
+
+            <h3>
+                Halo! Saya Ikhsan Fauzy 👋
+            </h3>
+
+            <p>
+
+                Saya adalah seorang pelajar yang sedang
+                menempuh pendidikan di
+                <b>SMKN 4 Dumai</b>.
+                Saat ini saya berada di kelas
+                <b>X (10) TKJ</b> atau Teknik Komputer
+                dan Jaringan.
+
+            </p>
+
+            <p>
+
+                Saya memiliki ketertarikan terhadap dunia
+                teknologi, komputer, jaringan, dan
+                pemrograman. Saya ingin terus belajar
+                dan mengembangkan kemampuan saya agar
+                dapat menjadi seseorang yang ahli di
+                bidang teknologi.
+
+            </p>
+
+            <p>
+
+                Di luar kegiatan belajar, saya juga
+                memiliki hobi bermain futsal.
+                Bagi saya, futsal merupakan kegiatan
+                yang menyenangkan sekaligus melatih
+                kerja sama, kedisiplinan, dan sportivitas.
+
+            </p>
+
+        </div>
+
+
+        <div class="school-card reveal">
+
+            <div class="school-icon">
+                🏫
+            </div>
+
+            <h3>
+                SMKN 4 DUMAI
+            </h3>
+
+            <p>
+                Teknik Komputer dan Jaringan
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card reveal">
+
+            <div class="icon">🎓</div>
+
+            <small>Pendidikan</small>
+
+            <b>
+                SMKN 4 Dumai
+            </b>
+
+            <small>
+                X (10) TKJ
+            </small>
+
+        </div>
+
+
+        <div class="info-card reveal">
+
+            <div class="icon">🎂</div>
+
+            <small>Tanggal Lahir</small>
+
+            <b>
+                05 Oktober 2009
+            </b>
+
+        </div>
+
+
+        <div class="info-card reveal">
+
+            <div class="icon">📍</div>
+
+            <small>Alamat</small>
+
+            <b>
+                Dumai, Riau
+            </b>
+
+        </div>
+
+
+        <div class="info-card reveal">
+
+            <div class="icon">⚽</div>
+
+            <small>Hobi</small>
+
+            <b>
+                Futsal
+            </b>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     KEAHLIAN
+===================================================== -->
+
+<section id="keahlian">
+
+
+    <div class="section-title reveal">
+
+        <div class="title-icon">
+            ⚙
+        </div>
+
+        <div>
+
+            <small>KEMAMPUAN</small>
+
+            <h2>
+                Keahlian <span>Saya</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <p class="subtitle reveal">
+        Berikut adalah beberapa keahlian yang sedang saya pelajari:
+    </p>
+
+
+    <div class="skills">
+
+
+        <!-- HTML -->
+
+        <div class="skill reveal">
+
+            <div class="skill-top">
+
+                <div class="skill-name">
+
+                    <div class="skill-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <div>
+
+                        <b>HTML</b>
+
+                        <small>
+                            Struktur Website
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="percent">
+                    75%
+                </div>
+
+            </div>
+
+            <div class="progress">
+
+                <span data-width="75%"></span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CSS -->
+
+        <div class="skill reveal">
+
+            <div class="skill-top">
+
+                <div class="skill-name">
+
+                    <div class="skill-icon">
+                        #
+                    </div>
+
+                    <div>
+
+                        <b>CSS</b>
+
+                        <small>
+                            Desain Website
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="percent">
+                    65%
+                </div>
+
+            </div>
+
+            <div class="progress">
+
+                <span data-width="65%"></span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- JAVASCRIPT -->
+
+        <div class="skill reveal">
+
+            <div class="skill-top">
+
+                <div class="skill-name">
+
+                    <div class="skill-icon">
+                        JS
+                    </div>
+
+                    <div>
+
+                        <b>JavaScript</b>
+
+                        <small>
+                            Interaksi Website
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="percent">
+                    50%
+                </div>
+
+            </div>
+
+            <div class="progress">
+
+                <span data-width="50%"></span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- JARINGAN -->
+
+        <div class="skill reveal">
+
+            <div class="skill-top">
+
+                <div class="skill-name">
+
+                    <div class="skill-icon">
+                        ⛓
+                    </div>
+
+                    <div>
+
+                        <b>Jaringan</b>
+
+                        <small>
+                            Dasar Networking
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="percent">
+                    60%
+                </div>
+
+            </div>
+
+            <div class="progress">
+
+                <span data-width="60%"></span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOBI
+===================================================== -->
+
+<section id="hobi">
+
+
+    <div class="section-title reveal">
+
+        <div class="title-icon">
+            ⚽
+        </div>
+
+        <div>
+
+            <small>AKTIVITAS</small>
+
+            <h2>
+                Hobi <span>Saya</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <p class="subtitle reveal">
+        Hal-hal yang saya sukai:
+    </p>
+
+
+    <div class="hobbies">
+
+
+        <div class="hobby reveal">
+
+            <div class="hobby-icon">
+                ⚽
+            </div>
+
+            <h3>
+                Futsal
+            </h3>
+
+            <p>
+
+                Bermain futsal bersama teman.
+                Futsal membantu melatih kerja sama,
+                kedisiplinan, sportivitas, dan
+                kekompakan dalam tim.
+
+            </p>
+
+        </div>
+
+
+        <div class="hobby reveal">
+
+            <div class="hobby-icon">
+                💻
+            </div>
+
+            <h3>
+                Teknologi
+            </h3>
+
+            <p>
+
+                Saya suka mempelajari komputer,
+                jaringan, website, HTML, CSS,
+                JavaScript, dan berbagai teknologi
+                digital lainnya.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     KONTAK
+===================================================== -->
+
+<section id="kontak">
+
+
+    <div class="section-title reveal">
+
+        <div class="title-icon">
+            ✉
+        </div>
+
+        <div>
+
+            <small>GET IN TOUCH</small>
+
+            <h2>
+                Kontak <span>Saya</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <p class="subtitle reveal">
+        Silakan hubungi saya melalui media sosial berikut:
+    </p>
+
+
+    <div class="contacts">
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            href="https://wa.me/6282168848036"
+            target="_blank"
+            class="contact reveal">
+
+            <div class="contact-icon whatsapp">
+                ☎
+            </div>
+
+            <small>
+                WhatsApp
+            </small>
+
+            <b>
+                0821 6884 8036
+            </b>
+
+        </a>
+
+
+
+        <!-- TIKTOK -->
+
+        <a
+            href="https://www.tiktok.com/@san_aja2009"
+            target="_blank"
+            class="contact reveal">
+
+            <div class="contact-icon tiktok">
+                ♪
+            </div>
+
+            <small>
+                TikTok
+            </small>
+
+            <b>
+                @san_aja2009
+            </b>
+
+        </a>
+
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            href="https://www.instagram.com/ikhsan_Ajaa"
+            target="_blank"
+            class="contact reveal">
+
+            <div class="contact-icon instagram">
+                ◎
+            </div>
+
+            <small>
+                Instagram
+            </small>
+
+            <b>
+                @ikhsan_Ajaa
+            </b>
+
+        </a>
+
+
+
+        <!-- GMAIL -->
+
+        <a
+            href="mailto:fauzyikhsan05@gmail.com"
+            class="contact reveal">
+
+            <div class="contact-icon gmail">
+                @
+            </div>
+
+            <small>
+                Gmail
+            </small>
+
+            <b>
+                fauzyikhsan05@gmail.com
+            </b>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <strong>
+        &lt;/&gt; Ikhsan <span>Fauzy</span>
+    </strong>
+
+    <br><br>
+
+    © <span id="year"></span>
+    Ikhsan Fauzy. All Rights Reserved.
+
+    <br><br>
+
+    "Terus belajar, karena teknologi tidak pernah berhenti berkembang."
+
+</footer>
+
+
+
+<!-- BACK TO TOP -->
+
+<button id="topBtn">
+    ↑
+</button>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* ===============================
+   TAHUN
+================================ */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+
+/* ===============================
+   MOBILE MENU
+================================ */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",function(){
+
+    navLinks.classList.toggle("open");
+
+});
+
+
+/* Tutup menu ketika link diklik */
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        navLinks.classList.remove("open");
+
+    });
+
+});
+
+
+
+/* ===============================
+   SCROLL REVEAL
+================================ */
+
+const reveals =
+document.querySelectorAll(".reveal");
+
+const revealObserver =
+new IntersectionObserver(function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+            revealObserver.unobserve(
+                entry.target
+            );
+
+        }
+
+    });
+
+},{
+    threshold:.12
+});
+
+
+reveals.forEach(function(element){
+
+    revealObserver.observe(element);
+
+});
+
+
+
+/* ===============================
+   PROGRESS BAR
+================================ */
+
+const bars =
+document.querySelectorAll(".progress span");
+
+const barObserver =
+new IntersectionObserver(function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.style.width =
+            entry.target.dataset.width;
+
+            barObserver.unobserve(
+                entry.target
+            );
+
+        }
+
+    });
+
+},{
+    threshold:.5
+});
+
+
+bars.forEach(function(bar){
+
+    barObserver.observe(bar);
+
+});
+
+
+
+/* ===============================
+   ACTIVE NAVBAR
+================================ */
+
+const sections =
+document.querySelectorAll("section");
+
+const links =
+document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll",function(){
+
+    let current="";
+
+    sections.forEach(function(section){
+
+        const sectionTop =
+        section.offsetTop - 150;
+
+        if(window.scrollY >= sectionTop){
+
+            current =
+            section.getAttribute("id");
+
+        }
+
+    });
+
+
+    links.forEach(function(link){
+
+        link.classList.remove("active");
+
+        if(
+            link.getAttribute("href") ===
+            "#" + current
+        ){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+
+/* ===============================
+   BACK TO TOP
+================================ */
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 400){
+
+        topBtn.classList.add("show");
+
+    }else{
+
+        topBtn.classList.remove("show");
+
+    }
+
+});
+
+
+topBtn.addEventListener("click",function(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+
+
+/* ===============================
+   DARK / LIGHT MODE
+================================ */
+
+const themeBtn =
+document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click",function(){
+
+    document.body.classList.toggle("light");
+
+    if(document.body.classList.contains("light")){
+
+        themeBtn.textContent="☀";
+
+    }else{
+
+        themeBtn.textContent="☾";
+
+    }
+
+});
+
+
+
+/* ===============================
+   FOTO ERROR HANDLER
+================================ */
+
+const photo =
+document.querySelector(".photo");
+
+photo.addEventListener("error",function(){
+
+    photo.style.display="none";
+
+    document.querySelector(".photo-ring").innerHTML =
+    '<div style="width:100%;height:100%;border-radius:50%;display:grid;place-items:center;text-align:center;color:#00d9ff;font-size:60px;background:#061426;">👤</div>';
+
+});
+
+</script>
+
+</body>
+</html>
